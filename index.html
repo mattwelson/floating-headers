@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Floating headers</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css" rel="stylesheet" />
+    <link href="Demo/demo.min.css" type="text/css" rel="stylesheet" />
+    <link href="floatingheaders.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="title">
+        <h1>Floating headers</h1>
+        <h2>Matt Welson</h2>
+        <h3><a href="https://github.com/mattwelson/floating-headers">github</a></h3>
+    </div>
+
+    <div class="container">
+        <div class="fh-container">
+            <div class="fh-header header">
+                <h3>headers stay at the top of the page</h3>
+            </div>
+            <p>
+                ...until all the content scrolls past it.
+            </p>
+        </div>
+        <div class="fh-container">
+            <div class="fh-header header">
+                <h3>Then the next header will push it up</h3>
+            </div>
+            <p>
+                ...and out of the way.
+            </p>
+        </div>
+        <div class="fh-container">
+            <div class="fh-header header bottom-container">
+                <h3>Built with a few lines of js/css</h3>
+            </div>
+            <p>
+                But depends on jquery for now.
+            </p>
+        </div>
+        <div class="fh-container">
+            <p>
+                Not all containers need a title though.
+            </p>
+            <p>
+                Even one without a title can push the previous title off screen.
+            </p>
+        </div>
+    </div>
+
+    <div style="height:1000px;"></div>
+
+    <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="floatingheaders.js"></script>
+</body>
+</html>
