@@ -15,8 +15,12 @@ body {
 }
 
 .header {
-    background-color:#FF5722;
     color:#ffffff;
+    background-color:#607D8B;
+
+    &.orange{
+        background-color:#FF5722;
+    }
 }
 
 .title {

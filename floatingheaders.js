@@ -1,26 +1,34 @@
 ﻿$(window).scroll(function () {
     var wScroll = $(this).scrollTop();
 
-    var onscreen = null,
-        offsetFromTop;
+    var offsetFromTop,
+        $header;
 
     $('.fh-container').each(function () {
-        var $this = $(this);
-        if ($this.offset().top < wScroll && $this.offset().top + $this.height() > wScroll) {
-            onscreen = this;
-            offsetFromTop = $this.offset().top;
+        $header = $('.fh-header', this);
+        var $this = $(this),
+            thisTop = $this.offset().top,
+            thisHeight = $this.outerHeight(true),
+            headerHeight = $header.outerHeight(true);
+        if (thisTop < wScroll){
+            if ((thisTop + thisHeight - headerHeight) > wScroll) {
+                offsetFromTop = $this.offset().top;
+                $header.css({
+                    'transform': 'translate(0px, ' + (wScroll - offsetFromTop) + 'px)'
+                });
+            } else if (thisTop + thisHeight > wScroll) {
+                $header.css({
+                    'transform': 'translate(0px, ' + (thisHeight - headerHeight) + 'px)'
+                });
+            } else {
+                $header.css({
+                    'transform': 'translate(0px, 0px)'
+                });
+            }
+        } else {
+            $header.css({
+                'transform': 'translate(0px, 0px)'
+            });
         }
     });
-
-    if (onscreen) {
-        var $header = $('.fh-header', onscreen);
-
-        if ($header.length) {
-            $header.css({
-                'transform': 'translate(0px, ' + wScroll - offsetFromTop + 'px)'
-            });
-
-            console.log(wScroll - offsetFromTop);
-        }
-    }
 });

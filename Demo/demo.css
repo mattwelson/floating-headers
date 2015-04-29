@@ -10,8 +10,10 @@ body {
   margin-right: auto; }
 
 .header {
-  background-color: #FF5722;
-  color: #ffffff; }
+  color: #ffffff;
+  background-color: #607D8B; }
+  .header.orange {
+    background-color: #FF5722; }
 
 .title {
   background-color: #607D8B;

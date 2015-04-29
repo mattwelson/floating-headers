@@ -1,12 +1,10 @@
 ﻿.fh-container {
     position:relative;
+    overflow:hidden;
 }
 
 .fh-header {
     overflow:auto;
     z-index:10; /* this may cause issues */
-}
-
-.fh-header.bottom-container {
 }
 
